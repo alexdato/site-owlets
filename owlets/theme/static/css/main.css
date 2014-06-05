@@ -1,0 +1,1068 @@
+/* line 17, ../../../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: local("Source Sans Pro Light"), local("SourceSansPro-Light"), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/toadOcfmlt9b38dHJxOBGNbE_oMaV8t2eFeISPpzbdE.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Source Sans Pro"), local("SourceSansPro-Regular"), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/ODelI1aHBYDBqgeIAH2zlBM0YzuT7MdOe03otPbuUS0.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local("Source Sans Pro Semibold"), local("SourceSansPro-Semibold"), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/toadOcfmlt9b38dHJxOBGJ6-ys_j0H4QL65VLqzI3wI.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Londrina';
+  src: url("fonts/londrinasolid-regular-webfont.eot");
+  src: url("fonts/londrinasolid-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/londrinasolid-regular-webfont.woff") format("woff"), url("fonts/londrinasolid-regular-webfont.ttf") format("truetype"), url("londrinasolid-regular-webfont.svg#webfont") format("svg");
+}
+
+/* line 76, main.scss */
+html {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 82, main.scss */
+body, .home h2, footer a, .blog aside p > a, input[type="text"], textarea {
+  color: #4d4d4d;
+}
+
+/* line 86, main.scss */
+h1, h2, .main-container p > a {
+  color: #00a6c4;
+}
+
+/* line 90, main.scss */
+aside.previousposts li > a, .previousposts h2 {
+  color: #008033;
+}
+
+/* line 94, main.scss */
+header > nav a:hover, .secondary-nav a:hover {
+  color: #feca7f;
+}
+
+/* line 98, main.scss */
+footer {
+  background-color: #fecb00;
+}
+
+/* line 102, main.scss */
+a[title="visit us"], .blog a[title="next"], input[type="submit"], .welcome, .features > a, .viewfee > a, .view p:nth-child(3) {
+  background-color: #008033;
+}
+
+/* line 107, main.scss */
+a[title="visit us"]:hover, .blog a[title="next"]:hover, input[type="submit"]:hover, .features > a:hover, .viewfee > a:hover {
+  background-color: darkgreen;
+}
+
+/* line 111, main.scss */
+a[title="our facebook page"], a[title="our twitter stream"], .blog a[title="previous"], .view p:nth-child(2) {
+  background-color: #ff6600;
+}
+
+/* line 115, main.scss */
+.blog a[title="previous"]:hover {
+  background-color: #cc5200;
+}
+
+/* line 119, main.scss */
+.secondary-nav nav, .fees div > h3 {
+  background-color: #0088aa;
+}
+
+/* line 123, main.scss */
+input[type="text"]:focus, textarea:focus, .container > header, .fees div > p {
+  background-color: #00a6c4;
+}
+
+/* line 127, main.scss */
+a[title="visit us"], input[type="submit"], .home h1, .intro > p, .intro > a, .welcome h2, .welcome > p, header > nav a, .secondary-nav a, .blog aside a, .posts li > a, .posts h2, .welcome a, .features > a, .view, .fees, .viewfee > a {
+  color: white;
+}
+
+/* line 131, main.scss */
+.contact div:nth-of-type(2) {
+  background-color: white;
+}
+
+/* line 135, main.scss */
+a[title="our phone number"], .cat > h2, .cat li > a {
+  color: #ff6600;
+}
+
+/* line 139, main.scss */
+.features, .viewfee {
+  background-color: #e6e6e6;
+}
+
+/* line 144, main.scss */
+.posts li:nth-of-type(1) > a {
+  background: rgba(0, 166, 196, 0.8);
+}
+
+/* line 148, main.scss */
+.posts li:nth-of-type(2) > a {
+  background: rgba(0, 128, 51, 0.8);
+}
+
+/* line 152, main.scss */
+.posts li:nth-of-type(3) > a {
+  background: rgba(254, 202, 0, 0.8);
+}
+
+/* line 156, main.scss */
+.posts li:nth-of-type(4) > a {
+  background: rgba(254, 102, 0, 0.8);
+}
+
+/* line 160, main.scss */
+.posts li:nth-of-type(5) > a {
+  background: rgba(0, 136, 170, 0.8);
+}
+
+/* line 164, main.scss */
+.posts li > a:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* line 169, main.scss */
+body, input[type="text"], textarea {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 100%;
+  line-height: 1.25em;
+}
+
+/* line 175, main.scss */
+h1, h2, h3, h4, header > nav a, .secondary-nav a, .intro > a, .contact a, footer > p, .blog aside h2, .blog aside p, input[type="submit"], .features > a, .view > p > span, .viewfee > a {
+  font-family: 'Londrina', Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+/* line 180, main.scss */
+h1 {
+  font-size: 2.25em;
+}
+
+/* line 184, main.scss */
+h2, footer h3, footer > p, .blog aside p, header > nav a, .intro h1, .view > p > span {
+  font-size: 1.625em;
+}
+
+/* line 188, main.scss */
+input[type="submit"], .intro a, .secondary-nav a, .features h3 {
+  font-size: 1.375em;
+}
+
+/* line 192, main.scss */
+.contact a, .intro > p, .features > a, .viewfee > a {
+  font-size: 1.25em;
+}
+
+/* line 196, main.scss */
+.main-container p, .welcome > p {
+  font-size: 1.125em;
+}
+
+/* line 201, main.scss */
+.features > a, .viewfee > a, h1, .single header > h2, .posts, .team h1 + p, .team h2, .team h2 + p, .intro > a, a[title="visit us"], .intro, .features > div, .contact div:nth-of-type(2), .fees div > h3 {
+  text-align: center !important;
+}
+
+/* line 205, main.scss */
+.blog aside:nth-of-type(2) {
+  text-align: right;
+}
+
+/* line 210, main.scss */
+h1 {
+  line-height: 1em;
+}
+
+/* line 214, main.scss */
+header > nav a, .intro h1, .secondary-nav a, h2, .intro > p, footer > p {
+  line-height: 1.25em;
+}
+
+/* line 218, main.scss */
+.main-container p, .welcome > p {
+  line-height: 1.375em;
+}
+
+/* line 223, main.scss */
+.cat > h2, .previousposts > h2, .intro h1 {
+  margin-bottom: 0em;
+}
+
+/* line 227, main.scss */
+p, h1, h2, footer h3, footer > p {
+  margin-bottom: 1em;
+}
+
+/* line 231, main.scss */
+.features h3 {
+  margin: 0.75em 0 0 0;
+}
+
+/* line 235, main.scss */
+footer h3, footer > p {
+  margin-top: 1em;
+}
+
+/* line 239, main.scss */
+.team h2 {
+  margin: 1em 0 0 0;
+}
+
+/* line 244, main.scss */
+header p:first-of-type, section p:first-of-type, .cat li > a, .previousposts li > a, form label, .welcome a, .view {
+  font-weight: bold;
+}
+
+/* line 248, main.scss */
+.intro > p, .welcome > p, .features div > p, .view > h2, .view p > span {
+  font-weight: normal !important;
+}
+
+/* line 253, main.scss */
+a:link {
+  text-decoration: none;
+}
+
+/* line 257, main.scss */
+.main-container p > a {
+  border-bottom: 1px solid #00a6c4;
+}
+
+/* line 261, main.scss */
+.main-container p > a:hover, .welcome a {
+  border-bottom: 1px solid white;
+}
+
+/* line 265, main.scss */
+.welcome a:hover {
+  border-bottom: 1px solid transparent;
+}
+
+/* line 269, main.scss */
+header > nav li {
+  display: inline;
+}
+
+/* line 273, main.scss */
+header > nav a {
+  border-bottom: 6px solid #00a6c4;
+}
+
+/* line 277, main.scss */
+header > nav a:hover {
+  border-bottom: 6px solid #feca7f;
+}
+
+/* line 281, main.scss */
+footer a:hover {
+  border-bottom: 1px solid #4d4d4d;
+}
+
+/* line 285, main.scss */
+.intro > a {
+  display: inline-block;
+  padding: 20px 0;
+  width: 156px;
+  height: 16px;
+}
+
+/* line 292, main.scss */
+.features > a, .viewfee > a {
+  display: none !important;
+}
+
+/* line 296, main.scss */
+a[title^="arrange"] {
+  background-position: -293px 0;
+}
+
+/* line 300, main.scss */
+a[title^="arrange"]:hover {
+  background-position: -293px -56px;
+}
+
+/* line 304, main.scss */
+a[title^="see our setting"] {
+  background-position: -453px 0;
+  margin-left: 2%;
+}
+
+/* line 309, main.scss */
+a[title^="see our setting"]:hover {
+  background-position: -453px -56px;
+}
+
+/* line 313, main.scss */
+a[title="visit us"] {
+  padding: 20px 0;
+  background-position: -160px -310px;
+  width: 156px;
+  height: 14px;
+}
+
+/* line 320, main.scss */
+a[title="our facebook page"], a[title="our twitter stream"] {
+  display: none !important;
+}
+
+/* line 324, main.scss */
+.blog aside a[title="next"], .blog aside a[title="previous"] {
+  background-position: 0 -310px;
+  width: 136px;
+  height: 14px;
+  margin-bottom: 40px;
+}
+
+/* line 331, main.scss */
+.blog aside a[title="next"] {
+  padding: 10px 20px 30px 0;
+}
+
+/* line 335, main.scss */
+.blog aside a[title="previous"] {
+  padding: 10px 0 30px 20px;
+}
+
+/* line 340, main.scss */
+.logo, .richtext header img, .features > div {
+  margin: 0 auto;
+}
+
+/* line 345, main.scss */
+.home article > header img, .posts li > img, .posts li > a, .contact div a, .blog aside a[title="next"], .blog aside a[title="previous"], img, .logo, input[type="text"], textarea, .features > a, .view > p > span, .viewfee > a {
+  display: block;
+}
+
+/* line 350, main.scss */
+.contact, .contact div, .blog aside:nth-of-type(1), form span:nth-of-type(1), input[type="submit"], .team section > div, .blog aside a[title="previous"], .fees div > h3 {
+  float: left;
+}
+
+/* line 354, main.scss */
+.contact div:nth-of-type(2), form span:nth-of-type(2), .blog aside:nth-of-type(2), .blog aside a[title="next"], .fees div > p {
+  float: right;
+}
+
+/* line 359, main.scss */
+.main-container:after, .main-container header:after, header > ul:after, form p:after, .team section:after, .home header:after, .features:after, .viewfee:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+/* line 364, main.scss */
+footer > p, header > nav ul, .secondary-nav ul, .blog aside p, section.wide, .fees div > h3 {
+  clear: both;
+}
+
+/* line 369, main.scss */
+.single, .container > header, .posts > li, .home article > header, .features, .viewfee {
+  position: relative;
+}
+
+/* line 373, main.scss */
+.posts li > a, .intro, .features > a, .viewfee > a {
+  position: absolute;
+}
+
+/* line 378, main.scss */
+.main-container, footer, .home section {
+  padding: 3.90625%;
+}
+
+/* line 385, main.scss */
+.features > a, .viewfee > a, input[type="submit"], .contact div:nth-of-type(2), .intro > a, a[title="visit us"], a[title="our facebook page"], a[title="our twitter stream"], .blog aside a[title="next"], .blog aside a[title="previous"], .logo {
+  background-image: url("img/spritesheet.svg");
+  background-repeat: no-repeat;
+}
+
+/* line 391, main.scss */
+img {
+  max-width: 100%;
+}
+
+/* line 395, main.scss */
+.logo {
+  width: 320px;
+  height: 159px;
+  background-position: 0px -134px;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* line 402, main.scss */
+.contact {
+  width: 100%;
+}
+
+/* line 406, main.scss */
+.contact div {
+  margin: 1em 0;
+}
+
+/* line 410, main.scss */
+.contact div:nth-of-type(1) {
+  width: 49.5%;
+}
+
+/* line 414, main.scss */
+.contact div:nth-of-type(2) {
+  padding: 20px 0;
+  background-position: -160px -310px;
+  width: 156px;
+  height: 14px;
+}
+
+/* line 422, main.scss */
+form span {
+  width: 49%;
+}
+
+/* line 426, main.scss */
+input[type="text"], textarea {
+  background: rgba(0, 166, 196, 0.2);
+  border: none;
+  padding: 2%;
+  width: 96%;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+}
+
+/* line 434, main.scss */
+input[type="submit"] {
+  background-position: 0 -310px;
+  width: 156px;
+  height: 54px;
+  border: none;
+  cursor: pointer;
+  margin: 0 0 0 33.1896552%;
+}
+
+/* line 444, main.scss */
+.container > header {
+  padding: 6% 0%;
+}
+
+/* line 448, main.scss */
+.main-container {
+  width: 92.1875%;
+}
+
+/* line 453, main.scss */
+header > nav {
+  margin-top: 4%;
+}
+
+/* line 457, main.scss */
+header > nav ul, .secondary-nav ul {
+  text-align: center;
+}
+
+/* line 461, main.scss */
+.secondary-nav > nav li {
+  display: inline;
+}
+
+/* line 465, main.scss */
+header > nav a, .secondary-nav > nav a {
+  display: inline-block;
+  margin: 0 2%;
+}
+
+/* line 470, main.scss */
+.secondary-nav {
+  background: url("img/navborder.svg");
+  background-repeat: repeat-x;
+  background-position: 100% 100%;
+  padding-bottom: 11px;
+}
+
+/* line 477, main.scss */
+.secondary-nav nav {
+  padding: 2%;
+}
+
+/* line 482, main.scss */
+.footer-container {
+  background: url("img/footerborder.svg");
+  background-repeat: repeat-x;
+  padding-top: 32px;
+}
+
+/* line 488, main.scss */
+footer {
+  width: 92.1875%;
+  background-image: url("img/flower.svg"), url("img/flower.svg"), url("img/star.svg");
+  background-repeat: no-repeat;
+  background-position: 30% 92%, 55% 22%, 90% 75%;
+}
+
+/* line 495, main.scss */
+section.wide {
+  width: 100%;
+}
+
+/* line 500, main.scss */
+.richtext header img {
+  margin-bottom: 6%;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  border-radius: 25px;
+}
+
+/* line 506, main.scss */
+.posts > li {
+  width: 100%;
+}
+
+/* line 510, main.scss */
+.posts li > img {
+  z-index: 0;
+}
+
+/* line 514, main.scss */
+.posts li > a {
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  overflow: hidden;
+}
+
+/* line 521, main.scss */
+.posts li > a > p:first-of-type {
+  padding-top: 22%;
+}
+
+/* line 525, main.scss */
+.posts li > a > p:last-of-type {
+  display: none;
+}
+
+/* line 529, main.scss */
+.blog header > img {
+  margin-bottom: 4%;
+}
+
+/* line 533, main.scss */
+.blog aside {
+  width: 49%;
+}
+
+/* line 537, main.scss */
+.cat, .previousposts {
+  margin-top: 40px;
+}
+
+/* line 541, main.scss */
+.cat li, .previousposts li {
+  display: inline;
+  margin-right: 4%;
+}
+
+/* line 547, main.scss */
+.team section {
+  margin-bottom: 40px;
+}
+
+/* line 551, main.scss */
+.team section > div {
+  width: 21.8220339%;
+  margin-right: 4.2372881%;
+}
+
+/* line 555, main.scss */
+.team section > div img {
+  border: 4px solid #feca7f;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  border-radius: 25px;
+}
+
+/* line 560, main.scss */
+.team section > div:last-of-type {
+  margin-right: 0;
+}
+
+/* line 566, main.scss */
+.home article > header {
+  min-height: 160px;
+}
+
+/* line 570, main.scss */
+.intro {
+  background: rgba(0, 136, 170, 0.4);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+}
+
+/* line 579, main.scss */
+.intro h1 {
+  margin-top: 15%;
+  margin-bottom: 5%;
+}
+
+/* line 584, main.scss */
+.features > div img {
+  border: 4px solid #feca7f;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  border-radius: 25px;
+}
+
+/* line 589, main.scss */
+.view > p {
+  padding: 4%;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  border-radius: 25px;
+}
+
+/* line 594, main.scss */
+.view > p > span {
+  margin-top: 2%;
+}
+
+/* line 598, main.scss */
+.fees div > h3 {
+  width: 17%;
+  padding: 4%;
+  -moz-border-radius-topleft: 25px;
+  -webkit-border-top-left-radius: 25px;
+  border-top-left-radius: 25px;
+  -moz-border-radius-bottomleft: 25px;
+  -webkit-border-bottom-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+/* line 604, main.scss */
+.fees div > p {
+  width: 67%;
+  padding: 4%;
+  -moz-border-radius-topright: 25px;
+  -webkit-border-top-right-radius: 25px;
+  border-top-right-radius: 25px;
+  -moz-border-radius-bottomright: 25px;
+  -webkit-border-bottom-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+/* line 610, main.scss */
+.viewfee {
+  padding-top: 0% !important;
+}
+
+@media only screen and (min-width: 480px) {
+  /* line 617, main.scss */
+  .container > header {
+    width: 92.1875%;
+    padding: 1% 3.90625%;
+  }
+
+  /* line 622, main.scss */
+  .intro h1 {
+    font-size: 2.25em;
+  }
+
+  /* line 626, main.scss */
+  .features > div {
+    float: left;
+    width: 48%;
+  }
+
+  /* line 631, main.scss */
+  .features > div:nth-child(even) {
+    float: right;
+  }
+}
+@media only screen and (min-width: 550px) {
+  /* line 639, main.scss */
+  .view, .fees {
+    width: 48%;
+  }
+
+  /* line 643, main.scss */
+  .view {
+    float: left;
+  }
+
+  /* line 647, main.scss */
+  .fees {
+    float: right;
+  }
+}
+@media only screen and (min-width: 692px) {
+  /* line 655, main.scss */
+  .intro {
+    background-image: url("img/star.svg"), url("img/butterfly.svg");
+    background-repeat: no-repeat;
+    background-position: 84% 90%, 20% 10%;
+  }
+
+  /* line 661, main.scss */
+  .intro h1 {
+    font-size: 3.75em;
+  }
+
+  /* line 665, main.scss */
+  .contact {
+    width: 92.1875%;
+    position: absolute;
+  }
+
+  /* line 670, main.scss */
+  .welcome p {
+    margin-right: 37%;
+  }
+
+  /* line 674, main.scss */
+  .welcome {
+    background-image: url("img/flower.svg"), url("img/flower.svg"), url("img/flower.svg"), url("img/flower.svg"), url("img/bigflower.svg");
+    background-repeat: no-repeat;
+    background-position: 70% 14%, 90% 16%, 70% 90%, 90% 88%, 86% 50%;
+  }
+
+  /* line 680, main.scss */
+  .single article {
+    width: 92.1875%;
+    margin: auto;
+  }
+
+  /* line 685, main.scss */
+  .posts li > a > p:last-of-type {
+    padding: 0 12%;
+    display: block;
+  }
+
+  /* line 690, main.scss */
+  .features > a, .viewfee > a {
+    display: block !important;
+    padding: 18px 0px;
+    top: 3%;
+    right: 3.9%;
+    background-position: -410px -120px;
+    width: 199px;
+    height: 16px;
+  }
+
+  /* line 701, main.scss */
+  .viewfee > a {
+    top: -2%;
+  }
+
+  /* line 705, main.scss */
+  footer > div {
+    width: 19.9%;
+    margin-bottom: 2%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* line 714, main.scss */
+  .richtext section {
+    width: 47.881356%;
+  }
+
+  /* line 718, main.scss */
+  .richtext section:nth-of-type(1) {
+    clear: both;
+    float: left;
+  }
+
+  /* line 723, main.scss */
+  .richtext section:nth-of-type(2) {
+    float: right;
+  }
+
+  /* line 728, main.scss */
+  .richtext header img {
+    float: right;
+    margin-left: 3.90625%;
+    border: 4px solid #feca7f;
+    padding: 12px;
+  }
+}
+@media only screen and (min-width: 800px) {
+  /* line 739, main.scss */
+  header > nav a {
+    font-size: 2em;
+  }
+
+  /* line 743, main.scss */
+  a[title="visit us"] {
+    padding: 20px 0;
+    background-position: 0 0;
+    width: 200px;
+    height: 14px;
+  }
+
+  /* line 750, main.scss */
+  h1 {
+    font-size: 2.625em;
+  }
+
+  /* line 754, main.scss */
+  .fees > div > p > span {
+    display: block;
+  }
+
+  /* line 759, main.scss */
+  .features > div {
+    float: left !important;
+    width: 21.8220339%;
+    margin-right: 4.2372881%;
+  }
+
+  /* line 765, main.scss */
+  .features > div:last-of-type {
+    margin-right: 0;
+  }
+
+  /* line 769, main.scss */
+  .features h3 {
+    margin: 0.75em 0 0.75em 0;
+  }
+
+  /* line 772, main.scss */
+  .features > a {
+    top: 6%;
+  }
+
+  /* line 776, main.scss */
+  footer > div {
+    float: left;
+  }
+}
+@media only screen and (min-width: 850px) {
+  /* line 784, main.scss */
+  .contact div:nth-of-type(2) {
+    padding: 19px 0;
+    background-position: 0 -54px;
+    background-color: transparent;
+    width: 245px;
+    height: 16px;
+  }
+
+  /* line 792, main.scss */
+  a[title="our facebook page"], a[title="our twitter stream"], a[title="our phone number"] {
+    float: left;
+    margin-left: 6%;
+  }
+
+  /* line 797, main.scss */
+  a[title="our phone number"] {
+    margin-left: 12%;
+  }
+
+  /* line 801, main.scss */
+  a[title="our facebook page"], a[title="our twitter stream"] {
+    display: block !important;
+    width: 24px;
+    height: 26px;
+    background-position: -0px -108px;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  /* line 809, main.scss */
+  a[title="our twitter stream"] {
+    background-position: -24px -108px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  /* line 817, main.scss */
+  .single article {
+    width: 49.1525423%;
+  }
+
+  /* line 822, main.scss */
+  .blog aside {
+    position: absolute;
+    width: 17.18644%;
+    height: 100%;
+    top: 200px;
+  }
+
+  /* line 829, main.scss */
+  .blog aside:nth-of-type(1) {
+    left: 4%;
+    background: url("img/flower.svg"), url("img/flower.svg"), url("img/flower.svg");
+    background-repeat: no-repeat;
+    background-position: 10% 30%, 30% 35%, 40% 30%;
+  }
+
+  /* line 836, main.scss */
+  .blog aside:nth-of-type(2) {
+    right: 4%;
+    text-align: right;
+    background: url("img/star.svg");
+    background-repeat: no-repeat;
+    background-position: 70% 30%;
+  }
+
+  /* line 844, main.scss */
+  .blog aside.cat {
+    text-align: right;
+    height: inherit;
+    background: none;
+  }
+
+  /* line 850, main.scss */
+  .cat li, .previousposts li {
+    margin: 8% 0 8% 0;
+    padding: 8% 0 0 0;
+    background-image: url("img/spritesheet.svg");
+    background-position: 0 -364px;
+    background-repeat: no-repeat;
+  }
+
+  /* line 858, main.scss */
+  .blog aside.previousposts {
+    text-align: left;
+    background: none;
+  }
+
+  /* line 863, main.scss */
+  .previousposts li {
+    background-position: 0 -414px;
+  }
+
+  /* line 867, main.scss */
+  .cat, .previousposts {
+    margin-top: 40px;
+  }
+
+  /* line 871, main.scss */
+  .cat li, .previousposts li {
+    display: block;
+  }
+
+  /* line 875, main.scss */
+  .cat > h2, .previousposts > h2 {
+    margin-bottom: 1em;
+  }
+
+  /* line 880, main.scss */
+  .form {
+    background: url("img/star.svg"), url("img/butterfly.svg");
+    background-repeat: no-repeat;
+    background-position: 90% 30%, 10%, 20%;
+  }
+
+  /* line 885, main.scss */
+  .features > a {
+    top: 8%;
+  }
+}
+@media only screen and (min-width: 1068px) {
+  /* line 894, main.scss */
+  .intro h1 {
+    font-size: 5.5em;
+  }
+
+  /* line 897, main.scss */
+  header > nav a {
+    font-size: 2.625em;
+  }
+
+  /* line 901, main.scss */
+  .secondary-nav a {
+    font-size: 1.625em;
+  }
+}

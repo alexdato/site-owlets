@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load mezzanine_tags comment_tags keyword_tags rating_tags i18n future disqus_tags %}
+
+{% block meta_title %}{{ blog_post.meta_title }}{% endblock %}
+
+{% block meta_keywords %}{% metablock %}
+{% keywords_for blog_post as tags %}
+{% for tag in tags %}{% if not forloop.first %}, {% endif %}{{ tag }}{% endfor %}
+{% endmetablock %}{% endblock %}
+
+{% block meta_description %}{% metablock %}
+{{ blog_post.description }}
+{% endmetablock %}{% endblock %}
+
+{% block title %}
+{% editable blog_post.title %}{{ blog_post.title }}{% endeditable %}
+{% endblock %}
+
+
+{% block main %}
+<div class="main-container {% block pagetype %}single blog{% endblock pagetype %}">
+                <article>
+                    <header>
+                        <h1>{{ blog_post.title }}</h1>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAABmJLR0QA/wD/AP+gvaeTAAAAFklEQVQImWM8c+YMAwMDEwMDAwMDAwAc2gJozfURHgAAAABJRU5ErkJggg==" data-src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 600 0 %}" />
+                    </header>
+                    <section>
+                        {{ blog_post.content|richtext_filters|safe }}
+                    </section>
+                    <aside>
+                        {% with blog_post.get_previous_by_publish_date as previous %}
+                        {% if previous %}
+                        <h2><a title="previous" href="{{ previous.get_absolute_url }}">previous</a></h2>
+                        <p>{{ previous }}</p>
+                        {% endif %}
+                        {% endwith %}
+                    </aside>
+                    <aside>
+                        {% with blog_post.get_next_by_publish_date as next %}
+                        {% if next %}
+                        <h2><a title="next" href="{{ next.get_absolute_url }}">next</a></h2>
+                        <p>{{ next }}</p>
+                        {% endif %}
+                        {% endwith %}
+                    </aside>
+                </article>
+            </div> <!-- #main-container -->
+{% endblock %}

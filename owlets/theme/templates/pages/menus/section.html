@@ -1,0 +1,12 @@
+{% load i18n future pages_tags %}
+                    {% for page in page_branch %}
+                        {% if page.in_menu %}
+                        {% if page.is_current_or_ascendant or not page.is_primary %}
+                            {% if not page.is_primary %}
+                            <li><a href="{{ page.get_absolute_url }}">{{ page.title }}</a></li>
+                            {% endif %}
+                            {% page_menu page %}
+                        {% endif %}
+                        {% endif %}
+                    {% endfor %}
+

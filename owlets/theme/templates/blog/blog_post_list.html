@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load i18n future mezzanine_tags blog_tags keyword_tags disqus_tags %}
+
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Blog" %}{% endif %}{% endblock %}
+
+{% block meta_keywords %}{% metablock %}
+{% keywords_for page as keywords %}
+{% for keyword in keywords %}
+    {% if not forloop.first %}, {% endif %}
+    {{ keyword }}
+{% endfor %}
+{% endmetablock %}{% endblock %}
+
+{% block meta_description %}{% metablock %}
+{{ page.description }}
+{% endmetablock %}{% endblock %}
+
+{% block title %}
+{% if page %}
+{% editable page.title %}{{ page.title }}{% endeditable %}
+{% else %}
+{% trans "Blog" %}
+{% endif %}
+{% endblock %}
+
+
+
+{% block main %}
+            <div class="main-container {% block pagetype %}single blog{% endblock pagetype %}">
+                <article>
+                    <header>
+                        <h1>welcome to the blog</h1>
+                    </header>
+                    <section>
+                        <ul class="posts">
+                            {% for blog_post in blog_posts.object_list %}
+                            <li>
+                                <a href="{{ blog_post.get_absolute_url }}">
+                                    <p>{% blocktrans with sometime=blog_post.publish_date|timesince %}{{ sometime }} ago{% endblocktrans %}</p>
+                                     
+                                    <h2>{{ blog_post.title }}</h2>
+                                    {{ blog_post.description_from_content|safe }}
+                                </a>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAABmJLR0QA/wD/AP+gvaeTAAAAFklEQVQImWM8c+YMAwMDEwMDAwMDAwAc2gJozfURHgAAAABJRU5ErkJggg==" data-src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 900 500 %}" />
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+                    <aside class="cat">
+                        <h2>Categories</h2>
+                        <ul>
+                            {% for blog_post in blog_posts.object_list %}
+                            {% with blog_post.categories.all as categories %}
+                            {% for category in categories %}
+                            <li><a href="{% url "blog_post_list_category" category.slug %}">{{ category }}</a></li>
+                            {% endfor %}
+                            {% endwith %}
+                            {% endfor %}
+                        </ul>
+                    </aside>
+                    <aside class="previousposts">
+                        <h2>Previous posts</h2>
+                        <ul>
+                            {% for blog_post in blog_posts.object_list %}
+                            <li><a href="{{ blog_post.get_absolute_url }}">{{ blog_post.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </aside>
+                </article>
+            </div> <!-- #main-container -->
+{% endblock %}

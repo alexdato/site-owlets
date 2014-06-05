@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load pages_tags mezzanine_tags i18n future staticfiles %}
+            {% block home %}
+            <div class="home">
+                <article>
+                    <header>
+                        {% editable page.homepage.introduction_heading %}
+                        <div class="intro">
+                            <h1>{{ page.homepage.introduction_heading }}</h1>
+                            <a title="arrange a visit" href="{{ settings.COME_AND_VISIT_LINK }}">arrange a visit</a><a title="see our setting" href="/setting/">see our setting</a>
+                        </div>
+                        {% endeditable %}
+                        <div class="cycle-slideshow"> 
+                            {% for slide in page.homepage.slides.all %}
+                            <img src="{{ MEDIA_URL }}{% thumbnail slide.image 1600 864 %}" />
+                            {% endfor %}
+                        </div>
+                    </header>
+                    <section class="welcome">
+                        {% editable page.homepage.welcome_heading page.homepage.welcome_text page.homepage.welcome_link %}
+                        <h2>{{ page.homepage.introduction_heading }}</h2>
+                        <p>{{ page.homepage.welcome_text }}</p>
+                        <p><a href="{{ page.homepage.welcome_link }}">read the rest of our welcome</a></p>
+                        {% endeditable %}
+                    </section>
+                    <section class="features">
+                        
+                        <h2>{{ page.homepage.what_we_do_heading }}</h2>
+                        
+                        {% for box in page.homepage.dobox.all %}
+                        <div>
+                            <a href="{{ box.link }}"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAABmJLR0QA/wD/AP+gvaeTAAAAFklEQVQImWM8c+YMAwMDEwMDAwMDAwAc2gJozfURHgAAAABJRU5ErkJggg==" data-src="{{ MEDIA_URL }}{% thumbnail box.image 464 300 %}" /></a>
+                            <h3>{{ box.title }}</h3>
+                            <p>{{ box.text }}</p>
+                        </div>
+                        {% endfor %}
+                        
+                        <a href="{{ page.homepage.what_we_do_link }}">what we do in a day</a> 
+                        
+                    </section>
+                    <section class="viewfee">
+                        <div class="view">
+                            <h2>{{ page.homepage.what_people_are_saying_heading }}</h2>
+                            {% for quote in page.homepage.parentssaying.all %}
+                            <p>{{ quote.saying_quote }}<span>{{ quote.saying_name }}</span></p>
+                            {% endfor %}
+                        </div>
+                        <div class="fees">
+                            <h2>{{ page.homepage.our_fees_heading }}</h2>
+                            
+                            {% for fee in page.homepage.fees.all %}
+                            <div>
+                                <h3><span>{{ fee.fees_age }}<span><br />years</h3>
+                                <p><span>&pound;{{ fee.fees_price }} per hour</span> {{ fee.fees_description }}</p>
+                            </div>
+                            {% endfor %}
+                            
+                        </div>
+                        <a href="{{ settings.COME_AND_VISIT_LINK }}">come and visit us</a>
+                    </section>
+                </article>
+            </div> <!-- #main-container -->
+            {% endblock home %}

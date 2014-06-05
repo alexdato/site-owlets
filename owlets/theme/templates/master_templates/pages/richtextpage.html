@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% load pages_tags mezzanine_tags i18n future staticfiles %}
+
+{% block main %}
+
+is this the template??
+{% editable page.richtextpage.content %}
+
+{{ page.richtextpage.content|richtext_filters|safe }}
+{% endeditable %}
+
+{% endblock %}

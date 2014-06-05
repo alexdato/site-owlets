@@ -1,0 +1,904 @@
+@import "compass/reset";
+@import "compass/css3";
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/toadOcfmlt9b38dHJxOBGNbE_oMaV8t2eFeISPpzbdE.woff) format('woff');
+	}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/ODelI1aHBYDBqgeIAH2zlBM0YzuT7MdOe03otPbuUS0.woff) format('woff');
+	}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro Semibold'), local('SourceSansPro-Semibold'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/toadOcfmlt9b38dHJxOBGJ6-ys_j0H4QL65VLqzI3wI.woff) format('woff');
+	}
+@font-face{
+	font-family:					'Londrina'; 
+	src: 							url('fonts/londrinasolid-regular-webfont.eot');
+	src: 							url('fonts/londrinasolid-regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/londrinasolid-regular-webfont.woff') format('woff'), url('fonts/londrinasolid-regular-webfont.ttf') format('truetype'), url('londrinasolid-regular-webfont.svg#webfont') format('svg'); 
+	}
+
+// VARIABLES //
+	$lightblue:						#00a6c4;
+	$darkblue:						#0088AA;
+	$textgrey:						#4d4d4d;
+	$lightgrey:						#E6E6E6;
+	$yellow:						#FECA7F;
+	$darkyellow:					#FECB00;
+	$green:							#008033;
+	$darkgreen:						#006400;
+	$orange:						#FF6600;
+	$darkorange:					#CC5200;
+
+// GRAPHICS //
+	$sprites: 						url('img/spritesheet.svg');
+	$footerborder:					url('img/footerborder.svg');
+	$bigflower:						url('img/bigflower.svg');
+	$flower:						url('img/flower.svg');
+	$star:							url('img/star.svg');
+	$butterfly:						url('img/butterfly.svg');
+	$navborder:						url('img/navborder.svg');
+
+//	build styles mobile first
+//  target / context = result
+
+// MIXINS //
+@mixin headingfontstack {
+	font-family:					'Londrina', Arial, "Helvetica Neue", Helvetica, sans-serif;
+	}
+
+@mixin clear { 
+   	content:						"."; 
+   	visibility: 					hidden; 
+   	display: 						block; 
+   	height: 						0; 
+   	clear: 							both;
+	}
+
+@mixin imagereplacement {
+  	text-indent:					100%;
+  	white-space:					nowrap;
+  	overflow:						hidden;
+	}
+
+@mixin debug {
+	border: 						1px solid red; 
+	}
+
+
+// PAGE //
+html {
+	width: 							100%;
+	height:							100%;
+	}
+
+// COLOR //
+body, .home h2, footer a, .blog aside p > a, input[type="text"], textarea	{
+	color:							$textgrey;
+	}
+
+h1, h2, .main-container p > a {
+	color:							$lightblue;
+	}
+
+aside.previousposts li > a, .previousposts h2 {
+	color:							$green;
+	}
+
+header > nav a:hover, .secondary-nav a:hover {
+	color:							$yellow;							
+	}
+
+footer {
+	background-color: 				$darkyellow;
+	}
+
+a[title="visit us"], .blog a[title="next"], input[type="submit"], .welcome, .features > a, .viewfee > a, .view p:nth-child(3) {
+	background-color: 				$green;
+	}
+
+
+a[title="visit us"]:hover, .blog a[title="next"]:hover, input[type="submit"]:hover, .features > a:hover, .viewfee > a:hover {
+	background-color: 				$darkgreen;
+	}
+
+a[title="our facebook page"], a[title="our twitter stream"], .blog a[title="previous"], .view p:nth-child(2) {
+	background-color:				$orange;
+	}
+
+.blog a[title="previous"]:hover {
+	background-color:				$darkorange;
+	}
+
+.secondary-nav nav, .fees div > h3 {
+	background-color:				$darkblue;
+	}
+
+input[type="text"]:focus, textarea:focus, .container > header, .fees div > p {
+	background-color:				$lightblue;
+	}
+
+a[title="visit us"], input[type="submit"], .home h1, .intro > p, .intro > a, .welcome h2, .welcome > p, header > nav a, .secondary-nav a, .blog aside a, .posts li > a, .posts h2, .welcome a, .features > a, .view, .fees, .viewfee > a {
+	color: 							white;
+	}
+
+.contact div:nth-of-type(2) {
+	background-color:				white;
+	}
+
+a[title="our phone number"], .cat > h2, .cat li > a {
+	color:							$orange;
+	}
+
+.features, .viewfee {
+	background-color:				$lightgrey;
+	}
+
+// list of blog posts
+.posts li:nth-of-type(1) > a {
+	background:						rgba(0, 166, 196, 0.8);
+	}
+
+.posts li:nth-of-type(2) > a {
+	background:						rgba(0, 128, 51, 0.8);
+	}
+
+.posts li:nth-of-type(3) > a {
+	background:						rgba(254, 202, 0, 0.8);
+	}
+
+.posts li:nth-of-type(4) > a {
+	background:						rgba(254, 102, 0, 0.8);
+	}
+
+.posts li:nth-of-type(5) > a {
+	background:						rgba(0, 136, 170, 0.8);
+	}
+
+.posts li > a:hover {
+	background:						rgba(0, 0, 0, 0.4);
+	}
+
+// TYPOGRAPHY //
+body, input[type="text"], textarea { 
+	font-family:					'Source Sans Pro', sans-serif;
+	font-size:						100%;										// all fonts are set at 16px initially
+	line-height:					1.25em;
+	}
+
+h1, h2, h3, h4, header > nav a, .secondary-nav a, .intro > a, .contact a, footer > p, .blog aside h2, .blog aside p, input[type="submit"], .features > a, .view > p > span, .viewfee > a {
+	@include headingfontstack;
+	}
+
+// font sizes
+h1 {
+	font-size:						2.25em;										// 36 / 16 
+	}
+
+h2, footer h3, footer > p, .blog aside p, header > nav a, .intro h1, .view > p > span {
+	font-size:						1.625em;									// 26 / 16
+	}
+
+input[type="submit"], .intro a, .secondary-nav a, .features h3 {
+	font-size:						1.375em;									// 22 / 16
+	}
+
+.contact a, .intro > p, .features > a, .viewfee > a {
+	font-size:						1.25em;										// 20 / 16
+	}
+
+.main-container p, .welcome > p {
+	font-size:						1.125em;									// 18 / 16
+	}
+
+// text alignment
+.features > a, .viewfee > a, h1, .single header > h2, .posts, .team h1 + p, .team h2, .team h2 + p, .intro > a, a[title="visit us"], .intro, .features > div, .contact div:nth-of-type(2), .fees div > h3 {
+	text-align:						center!important;
+	}
+
+.blog aside:nth-of-type(2) {
+	text-align:						right;
+	}
+
+// line-height
+h1 {
+	line-height:					1em;
+	}
+
+header > nav a, .intro h1, .secondary-nav a, h2, .intro > p, footer > p {
+	line-height:					1.25em;
+	}
+
+.main-container p, .welcome > p {
+	line-height:					1.375em;
+	}
+
+// margin
+.cat > h2, .previousposts > h2, .intro h1 {
+	margin-bottom:					0em;
+	}
+
+p, h1, h2, footer h3, footer > p {
+	margin-bottom:					1em;
+	}
+
+.features h3 {
+	margin:							0.75em 0 0 0;								// 20 / 16
+	}
+
+footer h3, footer > p {
+	margin-top: 					1em;
+	}
+
+.team h2 {
+	margin:							1em 0 0 0;
+	}
+
+// font weight
+header p:first-of-type, section p:first-of-type, .cat li > a, .previousposts li > a, form label, .welcome a, .view {
+	font-weight:					bold;
+	}
+
+.intro > p, .welcome > p, .features div > p, .view > h2, .view p > span  {
+	font-weight:					normal!important;
+	}
+
+// LINKS //
+a:link { 
+	text-decoration:				none;
+	}
+
+.main-container p > a {
+	border-bottom:					1px solid $lightblue;
+	}
+
+.main-container p > a:hover, .welcome a {
+	border-bottom:					1px solid white;
+	}
+
+.welcome a:hover {
+	border-bottom:					1px solid transparent;
+	}		
+
+header > nav li {
+	display:						inline;										// display list elements next to each other
+	}
+
+header > nav a {
+	border-bottom:					6px solid $lightblue;
+	}
+
+header > nav a:hover {
+	border-bottom:					6px solid $yellow;
+	}
+
+footer a:hover {
+	border-bottom:					1px solid $textgrey;
+	}
+
+.intro > a {
+	display:						inline-block;
+	padding: 						20px 0;
+	width: 							156px;
+	height:							16px;
+	}
+
+.features > a, .viewfee > a {
+	display:						none!important;
+	}
+
+a[title^="arrange"] {
+ 	background-position: 			-293px 0;
+ 	}
+
+a[title^="arrange"]:hover {
+	background-position: 			-293px -56px;
+	}
+
+a[title^="see our setting"] {
+ 	background-position: 			-453px 0;
+ 	margin-left: 					2%;
+ 	}
+
+a[title^="see our setting"]:hover {
+	background-position: 			-453px -56px;
+	}
+
+a[title="visit us"]	{
+	padding: 						20px 0;
+	background-position: 			-160px -310px;
+	width: 							156px;
+	height:							14px;			
+	}
+
+a[title="our facebook page"], a[title="our twitter stream"] {
+	display:						none!important;
+	}
+
+.blog aside a[title="next"], .blog aside a[title="previous"] {
+	background-position: 			0 -310px;
+	width: 							136px;
+	height:							14px;
+	margin-bottom:					40px;
+	}
+
+.blog aside a[title="next"] {
+	padding:						10px 20px 30px 0;
+	}
+
+.blog aside a[title="previous"] {
+	padding:						10px 0 30px 20px;
+	}
+
+// CENTER //
+.logo, .richtext header img, .features > div {
+	margin:							0 auto;
+	}
+
+// BLOCK //
+.home article > header img, .posts li > img, .posts li > a, .contact div a, .blog aside a[title="next"], .blog aside a[title="previous"], img, .logo, input[type="text"], textarea, .features > a, .view > p > span, .viewfee > a {													// button styles
+	display: 						block;
+	}
+
+// FLOATS //
+.contact, .contact div, .blog aside:nth-of-type(1), form span:nth-of-type(1), input[type="submit"], .team section > div, .blog aside a[title="previous"], .fees div > h3 {
+	float:							left;
+	}
+
+.contact div:nth-of-type(2), form span:nth-of-type(2), .blog aside:nth-of-type(2), .blog aside a[title="next"], .fees div > p	{
+	float:							right;
+	}
+
+// CLEAR //
+.main-container:after, .main-container header:after, header > ul:after, form p:after, .team section:after, .home header:after, .features:after, .viewfee:after {  
+	@include clear;
+	}
+
+// general clear
+footer > p, header > nav ul, .secondary-nav ul, .blog aside p, section.wide, .fees div > h3 {
+	clear:							both;
+	}
+
+// POSITION //
+.single, .container > header, .posts > li, .home article > header, .features, .viewfee {
+	position:						relative;
+	}
+
+.posts li > a, .intro, .features > a, .viewfee > a	{
+	position:						absolute;
+	}
+
+// PADDING //
+.main-container, footer, .home section  {
+	padding: 						3.90625%;					 				// 40 / 1024
+	}
+
+// MARGIN //
+
+// BACKGROUND GRAPHICS //
+.features > a, .viewfee > a, input[type="submit"], .contact div:nth-of-type(2), .intro > a, a[title="visit us"], a[title="our facebook page"], a[title="our twitter stream"], .blog aside a[title="next"], .blog aside a[title="previous"], .logo {												// homepage arrange a visit button										// defined as static
+	background-image: 				$sprites;
+	background-repeat:				no-repeat;	
+	}
+
+// ELEMENTS //
+img {
+	max-width:						100%;
+	}
+
+.logo {
+	width:							320px;
+	height:							159px;
+	background-position:			0px -134px;							
+	@include imagereplacement;
+	}
+
+.contact {
+	width:							100%;
+	}
+
+.contact div {
+	margin:							1em 0;
+	}
+
+.contact div:nth-of-type(1) {													// div containing visit us button
+	width: 							49.5%;
+	}
+
+.contact div:nth-of-type(2) {													// div containing contact details
+	padding: 						20px 0;										// defined as static
+	background-position: 			-160px -310px;								// first value hoz second vert
+	width: 							156px;
+	height:							14px;
+	}
+
+// FORMS //
+form span {
+	width:							49%;
+	}
+
+input[type="text"], textarea {
+	background:						rgba(0, 166, 196, 0.2);
+	border:							none;
+	padding:						2%;
+	width:							96%;
+	@include border-radius(2px);
+	}
+
+input[type="submit"] {
+	background-position: 			0 -310px;
+	width: 							156px;
+	height:							54px;
+	border:							none;
+	cursor:							pointer;
+	margin:							0 0 0 33.1896552%;
+	}
+
+// LAYOUT //
+.container > header {
+	padding:						6% 0%;
+	}
+
+.main-container {
+	width:							92.1875%;									// width is 944 at full size
+}
+
+// menu and secondary nav
+header > nav {
+	margin-top:						4%;
+	}
+
+header > nav ul, .secondary-nav ul {
+	text-align: 					center;										// center the menu									
+	}
+
+.secondary-nav > nav li {
+	display:						inline;										// display list elements next to each other
+	}
+
+header > nav a, .secondary-nav > nav a {
+	display: 						inline-block;								// treat links as blocks
+	margin:							0 2%;
+	}
+
+.secondary-nav {
+	background: 					$navborder;
+	background-repeat:				repeat-x;
+	background-position:			100% 100%;
+	padding-bottom:					11px;
+	}
+
+.secondary-nav nav {
+	padding:						2%;
+	}
+
+// footer area
+.footer-container {
+	background: 					$footerborder;
+	background-repeat:				repeat-x;
+	padding-top:					32px;
+	}
+
+footer {
+	width:							92.1875%;									// width is 944 at full size
+	background-image: 				$flower, $flower, $star;
+	background-repeat:				no-repeat;
+	background-position: 			30% 92%, 55% 22%, 90% 75%;
+	}
+
+section.wide {
+	width: 							100%;
+	}
+
+// richtext img border
+.richtext header img {
+	margin-bottom: 					6%;
+	@include border-radius(25px);
+	}
+
+// list of blog posts
+.posts > li {
+	width:							100%;
+	}
+
+.posts li > img {
+	z-index:						0;
+	}
+
+.posts li > a {
+	width:							100%;
+	height:							100%;
+	z-index:						10;
+	overflow:						hidden;
+	}
+
+.posts li > a > p:first-of-type {
+	padding-top:					22%;
+	}
+
+.posts li > a > p:last-of-type {
+	display:						none;
+	}
+
+.blog header > img {
+	margin-bottom: 					4%;
+	}
+
+.blog aside {
+	width:							49%;
+}
+
+.cat, .previousposts {
+	margin-top:						40px;
+}
+
+.cat li, .previousposts li {
+	display: 						inline;
+	margin-right:					4%;
+}
+
+// team layout
+.team section {
+	margin-bottom:					40px;
+	}
+
+.team section > div {
+	width: 							21.8220339%;								// 206 / 944
+	margin-right:					4.2372881%;
+	}
+.team section > div img {
+	border:							4px solid $yellow;
+  	@include border-radius(25px);
+  	}
+
+.team section > div:last-of-type {
+	margin-right:					0;
+	}
+
+// HOME //
+// 'hero' area
+.home article > header {
+	min-height:						160px;
+	}
+
+.intro {
+	background:						rgba(0, 136, 170, 0.4);
+	top: 							0;
+	left: 							0;
+	width:							100%;
+	height:							100%;
+	z-index:						200;
+	}
+
+.intro h1 { 
+	margin-top:						15%;
+	margin-bottom:					5%;
+	}
+
+.features > div img {
+	border:							4px solid $yellow;
+	@include border-radius(25px);
+	}
+	
+.view > p {
+	padding:						4%;
+	@include border-radius(25px);
+	}
+
+.view > p > span {
+	margin-top:						2%;
+	}
+
+.fees div > h3 {
+	width:							17%;
+	padding:						4%;
+	@include border-left-radius(25px)
+	}
+
+.fees div > p {
+	width:							67%;
+	padding:						4%;
+	@include border-right-radius(25px)
+	}
+
+.viewfee {
+	padding-top: 					0%!important;
+	}
+
+// MEDIA QUERIES //
+// 480px
+@media only screen and (min-width: 480px) {
+.container > header {
+	width:							92.1875%;
+	padding: 						1% 3.90625%; 								// 40 / 1024
+	}
+
+.intro h1 {
+	font-size:						2.25em;										// 36 / 16
+	}
+
+.features > div {
+	float:							left;
+	width:							48%;
+	}
+
+.features > div:nth-child(even)	{
+	float:							right;
+	}
+
+}
+
+// 550px
+@media only screen and (min-width: 550px) {
+.view, .fees {
+	width:							48%;
+	}
+
+.view {
+	float:							left;
+	}
+
+.fees {
+	float:							right;
+	}
+}
+
+
+// 692px
+@media only screen and (min-width: 692px) {
+.intro {
+	background-image: 				$star, $butterfly;
+	background-repeat:				no-repeat;
+	background-position: 			84% 90%, 20% 10%;
+	}
+
+.intro h1 {
+	font-size:						3.75em;
+	}
+
+.contact {
+	width: 							92.1875%;
+	position: 						absolute;
+	}
+
+.welcome p {
+	margin-right:					37%;
+	}
+
+.welcome {
+	background-image: 				$flower, $flower, $flower, $flower, $bigflower;
+	background-repeat:				no-repeat;
+	background-position: 			70% 14%, 90% 16%, 70% 90%, 90% 88%, 86% 50%;			
+	}
+
+.single article {
+	width:							92.1875%;
+	margin: 						auto;	
+}
+
+.posts li > a > p:last-of-type {
+	padding:						0 12%;
+	display:						block;
+	}
+
+.features > a, .viewfee > a {
+	display:						block!important;
+	padding:						18px 0px;
+	top: 							3%; 						
+	right: 							3.9%;
+	background-position: 			-410px -120px;
+	width:							199px; 
+	height:							16px;
+	}
+
+
+.viewfee > a {
+	top: 							-2%;
+	}
+
+footer > div {
+	width: 							19.9%;										// 824 / 5 = 164.8 (each div) 
+	margin-bottom:					2%;
+	}
+}
+
+// 768px
+@media only screen and (min-width: 768px) {
+// richtext layout
+.richtext section {
+	width: 							47.881356%;									// width 452
+	}
+
+.richtext section:nth-of-type(1) {												// setting left column
+	clear: 							both;
+	float: 							left;
+	}
+
+.richtext section:nth-of-type(2) {												// setting right column
+	float: 							right;
+	}
+
+// richtext img border
+.richtext header img {
+	float:							right;
+  	margin-left: 					3.90625%;
+  	border:							4px solid $yellow;
+	padding:						12px;
+	}
+}
+
+// 800px
+@media only screen and (min-width: 800px) {
+
+header > nav a {
+	font-size:						2em;
+	}
+
+a[title="visit us"]	{
+	padding: 						20px 0;
+	background-position: 			0 0;
+	width: 							200px;
+	height:							14px;			
+	}
+
+h1 {
+	font-size:						2.625em;
+	}
+
+.fees > div > p > span {
+	display:						block;
+	}
+
+// features
+.features > div {
+	float:							left!important;
+	width:							21.8220339%;
+	margin-right:					4.2372881%;
+	}
+
+.features > div:last-of-type {
+	margin-right:					0;
+	}
+
+.features h3 {
+	margin:							0.75em 0 0.75em 0;						// 20 / 16
+	}
+.features > a {
+	top: 							6%;
+	}
+
+footer > div {
+	float: 							left;
+	}
+
+}
+
+// 850px
+@media only screen and (min-width: 850px) {
+.contact div:nth-of-type(2) {													// div containing contact details
+	padding: 						19px 0;										// defined as static
+	background-position: 			0 -54px;									// first value hoz second vert
+	background-color:				transparent;
+	width: 							245px;
+	height:							16px;
+	}
+
+a[title="our facebook page"], a[title="our twitter stream"], a[title="our phone number"] {
+	float: 							left;
+	margin-left:					6%;
+	}
+
+a[title="our phone number"] {
+	margin-left:					12%;
+	}
+
+a[title="our facebook page"], a[title="our twitter stream"] {
+	display:						block!important;
+	width:							24px;
+	height: 						26px;
+	background-position: 			-0px -108px;
+	@include imagereplacement;
+	}
+
+a[title="our twitter stream"] {
+	background-position: 			-24px -108px;
+	}
+}
+
+// 992px
+@media only screen and (min-width: 992px) {
+// single column layout
+.single article {
+	width:							49.1525423%;							// width 464
+	}
+
+// blog detail layout
+.blog aside {
+	position:						absolute;								// position relative applied to single class
+	width: 							17.18644%;								// width 200
+	height:							100%;									
+	top: 							200px;
+	}
+
+.blog aside:nth-of-type(1) {												// setting left column
+	left: 							4%;
+	background: 					$flower, $flower, $flower;
+	background-repeat:				no-repeat;
+	background-position: 			10% 30%, 30% 35%, 40% 30%;
+	}
+
+.blog aside:nth-of-type(2) {												// setting right column
+	right: 							4%;
+	text-align:						right;
+	background: 					$star;
+	background-repeat:				no-repeat;
+	background-position: 			70% 30%;
+	}
+
+.blog aside.cat {
+	text-align:						right;
+	height:							inherit;
+	background:						none;
+	}
+
+.cat li, .previousposts li {									
+	margin:							8% 0 8% 0;
+	padding:						8% 0 0 0;									// 12 / 200
+	background-image:				$sprites;
+	background-position:			0 -364px;
+	background-repeat:				no-repeat;
+	}
+
+.blog aside.previousposts {
+	text-align:						left;
+	background:						none;
+	}
+
+.previousposts li {
+	background-position:			0 -414px;
+	}
+
+.cat, .previousposts {
+	margin-top:						40px;
+	}
+
+.cat li, .previousposts li {
+	display: 						block;
+	}
+
+.cat > h2, .previousposts > h2 {
+	margin-bottom:					1em;
+	}
+
+// contact page graphic
+.form {
+	background: 					$star, $butterfly;
+	background-repeat:				no-repeat;
+	background-position: 			90% 30%, 10%, 20%;
+	}
+.features > a {
+	top: 							8%;
+	}
+
+
+}
+
+// 1068px
+@media only screen and (min-width: 1068px) {
+.intro h1 {
+	font-size:						5.5em;											// 88 / 16
+	}
+header > nav a {
+	font-size:						2.625em;										// 42 / 16
+	}
+
+.secondary-nav a {
+	font-size:						1.625em;										// 26 / 16
+	}
+}

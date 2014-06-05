@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
+{% load pages_tags mezzanine_tags i18n future staticfiles %}
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+        <meta name="description" content="{% block meta_description %}{% endblock %}">
+        <title>{% block meta_title %}{{ page.meta_title }}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
+        <link rel="shortcut icon" href="{% static "img/favicon.ico" %}">
+        {% ifinstalled mezzanine.blog %}
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
+        <link rel="alternate" type="application/atom+xml" title="Atom" href="{% url "blog_post_feed" "atom" %}">
+        {% endifinstalled %}
+        {% compress css %}
+        <link rel="stylesheet" href="{% static "css/main_min.css" %}" />
+        {% block extra_css %}{% endblock %}
+        {% endcompress %}
+        {% compress js %}
+        <script type="text/javascript" src="{% static "js/main_min.js" %}"></script>
+        {% if request.user.is_authenticated %}
+            {% include "includes/footer_scripts.html" %}
+            <style>
+
+                .editable-form p, .helptext {
+                    font-weight: normal!important;
+                    font-family: arial!important;
+                    text-align: left!important;
+                    font-size: 14px!important;
+                }
+
+                .helptext {
+                    width: 100%;
+                    margin-top: 4%;
+                }
+
+                .editable-link {
+                    font-weight: normal!important;
+                    font-family: arial!important;
+
+                    position: absolute!important;
+                    z-index: 10000;
+                    top: inherit!important;
+                    left: inherit!important;
+                    margin: 0 0 0 0!important;
+                }
+
+                .editable-form input[type=submit] {
+                    font-weight: normal!important;
+                    font-family: arial!important;
+                    color: black;
+                    background: #ccc;
+                    width: inherit!important;
+                    height: inherit!important;
+                    border: none!important;
+                    cursor: pointer;
+                    border: 2px outset buttonface!important;
+                }
+            </style>
+        {% endif %}
+        {% block extra_js %}{% endblock %}{% endcompress %}
+        {% block extra_head %}{% endblock %}
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div class="contact">
+                    <div>
+                        {% if settings.COME_AND_VISIT_LINK %}
+                        <a title="visit us" href="{{ settings.COME_AND_VISIT_LINK }}">come and visit us</a>{% endif %}
+                    </div>
+                    <div>
+                        {% if settings.PHONE_NUMBER %}
+                        <a title="our phone number" href="tel:{{ settings.PHONE_NUMBER }}">{{ settings.PHONE_NUMBER }}</a>{% endif %}
+                        {% if settings.SOCIAL_LINK_FACEBOOK %}
+                        <a title="our facebook page" href="{{ settings.SOCIAL_LINK_FACEBOOK }}">facebook</a>{% endif %}
+                        {% if settings.SOCIAL_LINK_TWITTER %} 
+                        <a title="our twitter stream" href="{{ settings.SOCIAL_LINK_TWITTER }}">twitter</a>{% endif %}
+                    </div>
+                </div>
+                <a href="/" class="logo" title="Twoo the homepage">Owlets Nursery</a>
+                {% page_menu "pages/menus/menu.html" %}
+            </header>
+            
+            {% block home %}{% endblock home %}
+            
+            {% block main %}{% endblock main %}
+
+
+            
+            <div class="footer-container">
+                <footer>
+                    <div>
+                        <h3>owlets nursery</h3>
+                        {% if settings.ADDRESS %}
+                        <p>{{ settings.ADDRESS }}</p>{% endif %}
+                        <p>{% if settings.PHONE_NUMBER %}Phone: {{ settings.PHONE_NUMBER }}{% endif %}<br />{% if settings.EMAIL %}Email: <a href="{{ settings.EMAIL }}">{{ settings.EMAIL }}</a>{% endif %}</p>
+                    </div>
+                    {% page_menu "pages/menus/footer_menu.html" %}
+                    {% if settings.SOCIAL_LINK_FACEBOOK %}
+                     <p data-href="{{ settings.SOCIAL_LINK_FACEBOOK }}" data-show-faces="false" data-share="false" class="fb-like fb_iframe_widget" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=113869198637480&amp;href=http%3A%2F%2Fwww.owlets.com%2F&amp;locale=en_GB&amp;sdk=joey&amp;share=false&amp;show_faces=false"><iframe name="f3990ec9ec" width="1000px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:like Facebook Social Plugin" src="https://www.facebook.com/plugins/like.php?app_id=113869198637480&amp;channel=https%3A%2F%2Fs-static.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FdgdTycPTSRj.js%3Fversion%3D40%23cb%3Df1e9288468%26domain%3Ddevelopers.facebook.com%26origin%3Dhttps%253A%252F%252Fdevelopers.facebook.com%252Ff2b70814b8%26relation%3Dparent.parent&amp;href={{settings.SOCIAL_LINK_FACEBOOK}}&amp;locale=en_GB&amp;sdk=joey&amp;share=false&amp;show_faces=false" style="border: none; visibility: visible; width: 50px; height: 20px;"></iframe> we like keeping in touch, add us on <a href="{{ settings.SOCIAL_LINK_FACEBOOK }}">facebook</a></p>
+                     {% endif %}
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>

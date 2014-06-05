@@ -1,0 +1,29 @@
+{% extends "pages/page.html" %}
+{% load pages_tags mezzanine_tags i18n future staticfiles %}
+
+{% block pagetype %}richtext{% endblock pagetype %}
+
+{% block article %}
+            	<article>
+                    
+                    <header>
+                        {% editable page.a_page.heading page.a_page.intropara %}
+                        <h1>{{ page.a_page.heading }}</h1>
+                        
+                        {% if page.a_page.image %}
+                        <img src="{{ MEDIA_URL }}{% thumbnail page.a_page.image 550 400 %}" />
+                        {% endif %}
+            			<p>{{ page.a_page.intropara }}</p>
+                        {% endeditable %}
+                    </header>
+                    {% for section in page.a_page.section.all %}
+                    <section>
+                        {% editable section.heading section.content %}
+                        <h2>{{ section.heading }}</h2>
+                        <p>{{ section.content }}</p>
+                        {% endeditable %}
+                    </section>
+                    {% endfor %}
+                    
+                </article>
+{% endblock article %}

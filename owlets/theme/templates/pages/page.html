@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load pages_tags mezzanine_tags i18n future staticfiles %}
+
+{% block main %}
+            {% block secondary_nav %}
+            <div class="secondary-nav">
+                <nav>
+                    <ul>
+                        {% page_menu "pages/menus/section.html" %}
+                    </ul>
+                </nav>
+            </div>
+            {% endblock secondary_nav %}
+			<div class="main-container {% block pagetype %}{% endblock pagetype %}">
+                {% block article %}{% endblock article %}
+            </div> <!-- #main-container -->
+{% endblock %}

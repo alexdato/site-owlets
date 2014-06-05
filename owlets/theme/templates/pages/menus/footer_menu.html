@@ -1,0 +1,24 @@
+{% load i18n future pages_tags %}
+{% if page_branch_in_menu %}
+{% if branch_level == 0 %}
+    {% for page in page_branch %}
+                    
+                    {% if page.in_menu %}
+                    <div>
+                        <h3><a href="{{ page.get_absolute_url }}">{{ page.title }}</a></h3>
+                        {% if page.has_children_in_menu %}{% page_menu page %}{% endif %}
+                    </div>
+                    {% endif %}
+                    
+    {% endfor %}
+{% else %}
+                        <ul>
+                            {% for page in page_branch %}
+                            {% if page.in_menu %}
+                            <li><a href="{{ page.get_absolute_url }}">{{ page.title }}</a></li>
+                                {% if page.has_children_in_menu %}{% page_menu page %}{% endif %}
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+{% endif %}
+{% endif %}
